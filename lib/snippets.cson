@@ -1,0 +1,816 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+
+
+
+#===================================================
+# HTML / Document Object Model Snippets
+
+'.html':
+  'Blaze Template':
+    'prefix': 'template'
+    'body': '<template name="${1}">\n\t${2}\n</template>',
+  'Blaze #each':
+    'prefix': '#each'
+    'body': '
+      {{#each ${1:collections}}}\n\t${2}\n{{/each}}
+    ',
+  'Blaze #if':
+    'prefix': '#if'
+    'body': '
+      {{#if ${1:statement}}}\n\t${2}\n{{/if}}
+    ',
+  'Blaze #if else':
+    'prefix': '#ife'
+    'body': '{{#if ${1:statement}}}\n\t${2}\n{{else}}\n\t${3}\n{{/if}}
+    '
+
+#===================================================
+# Javascript Lanaguage Snippets
+
+'.js':
+
+  'if, else if, else':
+    'prefix': 'ieie'
+    'body': '
+      if (${1:true}) {
+        $2
+      } else if (${3:false}) {
+        $4
+      } else {
+        $5
+      }
+    ',
+
+  'console.log':
+    'prefix': 'log'
+    'body': 'console.log("${1:message}");\n${2:}',
+
+  'function()':
+    'prefix': 'f'
+    'body': 'function(${1:argument}){\n\t${2:}\n},',
+
+
+#===================================================
+# Meteor Core API
+
+  'Meteor.isClient':
+    'prefix': 'isClient'
+    'body': 'if(Meteor.isClient){\n\t${1:}\n}',
+
+  'Meteor.isServer':
+    'prefix': 'isServer'
+    'body': 'if(Meteor.isServer){\n\t${1:}\n}',
+
+  'Meteor.isCordova':
+    'prefix': 'isCordova'
+    'body': 'if(Meteor.isCordova){\n\t${1:}\n}',
+
+  'Meteor.startup':
+    'prefix': 'startup'
+    'body': 'Meteor.startup(function(){\n\t${1:}\n});',
+
+  'Meteor.absoluteUrl':
+    'prefix': 'absolute'
+    'body': 'Meteor.absoluteUrl("${1:}");',
+
+
+#===================================================
+# Publish & Subscribe
+
+  'Meteor Publish':
+    'prefix': 'publish'
+    'body': 'Meteor.publish("${1:name}", function(${2:argument}){\n\t${3:}\n});',
+
+  'Meteor Subscribe':
+    'prefix': 'subscribe'
+    'body': 'Meteor.subscribe("${1:name}", ${2:argument});',
+
+
+#===================================================
+# Methods
+
+  'Meteor Methods':
+    'prefix': 'methods'
+    'body': 'Meteor.methods({
+      \n\t${1:methodName}:function(){
+      \n\t\t${2:}
+      \n\t}
+      \n});',
+
+  'Meteor.Error':
+    'prefix': 'error'
+    'body': 'Meteor.Error(${1:Number}, "${2:description}");',
+
+
+  'Meteor.call':
+    'prefix': 'call'
+    'body': 'Meteor.call("${1:meteorMethod}", ${2:dataObject}, function(error, result){
+    \n\tif(error){
+    \n\t\tconsole.log("error", error);
+    \n\t}
+    \n\tif(result){
+    \n\t\t${3:}
+    \n\t}
+    \n});',
+
+
+#===================================================
+# Connections
+
+  'Meteor.status':
+    'prefix': 'status'
+    'body': 'Meteor.status()',
+
+
+  'Meteor.reconnect':
+    'prefix': 'reconnect'
+    'body': 'Meteor.reconnect()',
+
+
+  'Meteor.disconnect':
+    'prefix': 'disconnect'
+    'body': 'Meteor.disconnect()',
+
+
+  'Meteor.onConnection':
+    'prefix': 'onConnection'
+    'body': 'Meteor.onConnection(function(){
+      \n\t${1:}
+      \n});',
+
+
+#===================================================
+# Collections
+
+  'Meteor.Collection.ObjectID':
+    'prefix': 'object'
+    'body': 'new Meteor.Collection.ObjectID("${1:id}")',
+
+  'Collection.find':
+    'prefix': 'find'
+    'body': '${1:Collection}.find({"${2:field}":${3:value}});\n${4:}',
+
+  'Collection.findOne':
+    'prefix': 'findOne'
+    'body': '${1:Collection}.findOne({_id:"${2:recordId}"${3:}});\n${4:}',
+
+  'Collection.insert':
+    'prefix': 'insert'
+    'body': '${1:Collection}.insert(${2:newRecord});\n${3:}',
+
+
+  'Collection.Update':
+    'prefix': 'update'
+    'body': '${1:Collection}.update({_id:${2:idSelector}}, {$set:{\n\t${3:}\n}});\n${4:}',
+
+  'Collection.Upsert':
+    'prefix': 'upsert'
+    'body': '${1:Collection}.upsert({_id:${2:idSelector}}, {$set:{\n\t${3:}\n}});\n${4:}',
+
+  'Collection.remove':
+    'prefix': 'remove'
+    'body': '${1:Collection}.remove({_id:"${2:recordId}"${3:}});\n${4:}',
+
+  'Collection.allow':
+    'prefix': 'allow'
+    'body': '${1:Collection}.allow({
+      \n\tinsert: function(){
+      \n\t\treturn ${2:true};
+      \n\t},
+      \n\tupdate: function(){
+      \n\t\treturn ${3:true};
+      \n\t},
+      \n\tremove: function(){
+      \n\t\treturn ${4:true};
+      \n\t}
+      \n});\n${5:}',
+
+  'Collection.deny':
+    'prefix': 'deny'
+    'body': '${1:Collection}.deny({
+      \n\tinsert: function(){
+      \n\t\treturn ${2:false};
+      \n\t},
+      \n\tupdate: function(){
+      \n\t\treturn ${3:false};
+      \n\t},
+      \n\tremove: function(){
+      \n\t\treturn ${4:false};
+      \n\t}
+      \n});\n${5:}',
+
+
+  'Collection':
+    'prefix': 'Collection'
+    'body': '${1:CollectionName} = new Meteor.Collection("${2:name}");
+      \n${3:CollectionName}.allow({
+      \n\tinsert: function(){
+      \n\t\treturn ${4:true};
+      \n\t},
+      \n\tupdate: function(){
+      \n\t\treturn ${5:true};
+      \n\t},
+      \n\tremove: function(){
+      \n\t\treturn ${6:true};
+      \n\t}
+      \n});\n${7:}',
+
+
+#===================================================
+# Session Snippets
+
+  'Session.set':
+    'prefix': 'set'
+    'body': 'Session.set("${1:variableName}", ${2:value});\n${3:}',
+
+  'Session.get':
+    'prefix': 'get'
+    'body': 'Session.get("${1:variableName}");\n${2:}',
+
+  'Session.equals':
+    'prefix': 'equals'
+    'body': 'Session.equals("${1:variableName}", ${2:value});\n${3:}',
+
+  'Session.setDefault':
+    'prefix': 'setDefault'
+    'body': 'Session.setDefault("${1:variableName}", ${2:value});\n${3:}',
+
+#===================================================
+# Accounts Snippets
+
+
+  'Meteor.user':
+    'prefix': 'user'
+    'body': 'Meteor.user()',
+  'Meteor.user':
+    'prefix': 'varuser'
+    'body': 'var user = Meteor.user();',
+  'Meteor.userId':
+    'prefix': 'userId'
+    'body': 'Meteor.userId()',
+  'Meteor.users':
+    'prefix': 'users'
+    'body': 'Meteor.users',
+  'Meteor.loggingIn':
+    'prefix': 'loggingIn'
+    'body': 'Meteor.loggingIn()',
+  'Meteor.logout':
+    'prefix': 'logout'
+    'body': 'Meteor.logout(function(){
+      \n\t${1:}
+      \n});',
+  'Meteor.logoutOtherClients':
+    'prefix': 'logoutOtherClients'
+    'body': 'Meteor.logoutOtherClients(function(){
+      \n\t${1:}
+      \n});',
+  'Meteor.loginWithPassword':
+    'prefix': 'logoutOtherClients'
+    'body': 'Meteor.logoutOtherClients(${1:user}, ${2:password}, function(){
+      \n\t${3:}
+      \n});',
+
+
+  'Accounts':
+    'prefix': 'Accounts'
+    'body': '
+      Accounts.config({
+      \n\tsendVerificationEmail: ${1:true},
+      \n\tforbidClientAccountCreation: ${2:true},
+      \n\trestrictCreationByEmailDomain: "${3:school.edu}",
+      \n\tloginExpirationDays: ${4:30},
+      \n\toauthSecretKey: "${5:wgporjigrpqgdfg}",
+      \n});
+      \nAccounts.ui.config({
+      \n\trequestPermissions: ${1:{}},
+      \n\trequestOfflineToken: ${1:{}},
+      \n\tpasswordSignupFields: "${3:USERNAME_AND_OPTIONAL_EMAIL}",
+      \n});
+      \n${12:}
+    ',
+
+  'Accounts.validateNewUser':
+    'prefix': 'validateNewUser'
+    'body': 'Meteor.validateNewUser(function(){
+      \n\t${1:}
+      \n});',
+
+  'Accounts.onCreateUser':
+    'prefix': 'onCreateUser'
+    'body': 'Meteor.onCreateUser(function(options, user){
+      \n\t${1:}
+      \n\treturn ${1:user}
+      \n});',
+  'Accounts.onLogin':
+    'prefix': 'onLogin'
+    'body': 'Meteor.onLogin(function(){
+      \n\t${1:}
+      \n});',
+  'Accounts.onLoginFailure':
+    'prefix': 'onLoginFailure'
+    'body': 'Meteor.onLoginFailure(function(){
+      \n\t${1:}
+      \n});',
+
+
+#===================================================
+# Passwords Snippets
+
+
+  'Accounts.createUser':
+    'prefix': 'createUser'
+    'body': '
+      var userObject = {
+      \n\tusername: "${1:username}",
+      \n\tmail: "${1:email}",
+      \n\tpassword: "${1:password}"
+      \n};
+      \n
+      \nAccounts.createUser(${1:userObject}, function(){
+      \n\t${1:}
+      \n});',
+  'Accounts.changePassword':
+    'prefix': 'changePassword'
+    'body': 'Accounts.changePassword(${1:oldPassword}, ${2:newPassword}, function(){
+      \n\t${1:}
+      \n});',
+  'Accounts.forgotPassword':
+    'prefix': 'forgotPassword'
+    'body': 'Accounts.forgotPassword({email: "${1:address}"}, function(){
+      \n\t${2:}
+      \n});',
+  'Accounts.resetPassword':
+    'prefix': 'resetPassword'
+    'body': 'Accounts.resetPassword(${1:token}, ${2:newPassword}, function(){
+      \n\t${3:}
+      \n});',
+  'Accounts.setPassword':
+    'prefix': 'setPassword'
+    'body': 'Accounts.setPassword(${1:userId}, ${2:newPassword});',
+  'Accounts.verifyEmail':
+    'prefix': 'verifyEmail'
+    'body': 'Accounts.verifyEmail(${1:token}, function(){
+      \n\t${1:}
+      \n});',
+  'Accounts.sendResetPasswordEmail':
+    'prefix': 'sendResetPasswordEmail'
+    'body': 'Accounts.sendResetPasswordEmail(${1:userId});',
+
+  'Accounts.sendEnrollmentEmail':
+    'prefix': 'sendEnrollmentEmail'
+    'body': 'Accounts.sendEnrollmentEmail(${1:userId});',
+
+  'Accounts.sendVerificationEmail':
+    'prefix': 'sendVerificationEmail'
+    'body': 'Accounts.sendVerificationEmail(${1:userId});',
+
+
+
+
+#===================================================
+# Match Snippets
+
+  'Match.check':
+    'prefix': 'check'
+    'body': 'check(${1:variable}, ${2:String});\n${3:}',
+
+  'Match.test':
+    'prefix': 'test'
+    'body': 'Match.test(${1:variable}, ${2:String});\n${3:}',
+
+#===================================================
+# Timers Snippets
+
+  'Meteor.setTimeout':
+    'prefix': 'setTimeout'
+    'body': 'Match.setTimeout(function(){
+    \n\t${2:}
+    \n}, ${1:milliseconds});',
+
+  'Meteor.setInterval':
+    'prefix': 'setInterval'
+    'body': 'Match.setTimeout(function(){
+    \n\t${2:}
+    \n}, ${1:milliseconds});',
+
+  'Meteor.clearTimeout':
+    'prefix': 'clearTimeout'
+    'body': 'Meteor.clearTimeout(${1:id})',
+
+  'Meteor.clearInterval':
+    'prefix': 'clearInterval'
+    'body': 'Meteor.clearInterval(${1:id})',
+
+
+#===================================================
+# Tracker
+
+  'Tracker.autorun':
+    'prefix': 'autorun'
+    'body': 'Tracker.autorun(function(){
+    \n\t${2:}
+    \n});',
+
+  'Tracker.flush':
+    'prefix': 'flush'
+    'body': 'Tracker.flush();',
+
+  'Tracker.nonreactive':
+    'prefix': 'nonreactive'
+    'body': 'Tracker.nonreactive(function(){
+    \n\t${2:}
+    \n});',
+
+  'Tracker.onInvalidate':
+    'prefix': 'onInvalidate'
+    'body': 'Tracker.onInvalidate(function(){
+    \n\t${2:}
+    \n});',
+
+  'Tracker.afterFlush':
+    'prefix': 'afterFlush'
+    'body': 'Tracker.afterFlush(function(){
+    \n\t${2:}
+    \n});',
+
+  'Tracker.active':
+    'prefix': 'active'
+    'body': 'Tracker.active;',
+
+  'Tracker.currentComputation':
+    'prefix': 'currentComputation'
+    'body': 'Tracker.currentComputation;',
+
+
+#===================================================
+# Templates Snippets
+
+  'Template Rendered':
+    'prefix': 'rendered'
+    'body': 'Template.${1:name}.rendered = function(){\n\t${2}\n}',
+  'Template Events':
+      'prefix': 'events'
+      'body': '
+        Template.${1:name}.events({
+        \n\t"click ${2:#event}": function(event, template){
+        \n\t\t${3:}
+        \n\t}
+        \n});
+      ',
+  'Template Created':
+    'prefix': 'created'
+    'body': '
+      Template.${1:name}.created = function(){
+      \n\t${2:}
+      \n};
+    ',
+
+  'Template Destroyed':
+    'prefix': 'destroyed'
+    'body': '
+      Template.${1:name}.destroyed = function(){
+      \n\t${2:}
+      \n};
+    ',
+
+  'Template':
+    'prefix': 'Template'
+    'body': '
+      \nTemplate.${1:name}.helpers({
+      \n\tcreate: function(){
+      \n\t\t${2:}
+      \n\t},
+      \n\trendered: function(){
+      \n\t\t${3:}
+      \n\t},
+      \n\tdestroyed: function(){
+      \n\t\t${4:}
+      \n\t},
+      \n});
+      \n\nTemplate.${9:name}.events({
+      \n\t"${5:click #foo}": function(event, template){
+      \n\t\t${6:}
+      \n\t}
+      \n});
+      \n${7:}
+    ',
+
+  'Template Helpers':
+    'prefix': 'helpers'
+    'body': 'Template.${1:name}.helpers({\n\trendered: function(){\n\t\t${2}\n\t}\n});',
+
+  'Template.registerHelper':
+    'prefix': 'registerHelper'
+    'body': 'Template.registerHelper("${1:helperName}", function(${2:argument}){\n\t${3}\n});',
+
+
+#===================================================
+# Blaze Snippets
+
+  'Blaze.render':
+    'prefix': 'render'
+    'body': 'Blaze.render(${1:templateOrView}, ${2:parentNode});',
+  'Blaze.renderWithData':
+    'prefix': 'renderWithData'
+    'body': 'Blaze.renderWithData(${1:templateOrView}, ${2:data}, ${3:parentNode});',
+  'Blaze.remove':
+    'prefix': 'bremove'
+    'body': 'Blaze.remove(${1:renderedView});',
+  'Blaze.getData':
+    'prefix': 'getData'
+    'body': 'Blaze.getData(${1:elementOrView});',
+  'Blaze.toHTML':
+    'prefix': 'toHTML'
+    'body': 'Blaze.toHTML(${1:templateOrView});',
+  'Blaze.toHTMLWithData':
+    'prefix': 'toHTMLWithData'
+    'body': 'Blaze.toHTMLWithData(${1:templateOrView}, ${2:data});',
+  'Blaze.toHTMLWithData':
+    'prefix': 'toHTMLWithData'
+    'body': 'Blaze.toHTMLWithData(${1:templateOrView}, ${2:data});',
+  'Blaze.isTemplate':
+    'prefix': 'isTemplate'
+    'body': 'Blaze.isTemplate(${1:value});',
+
+
+#===================================================
+# EJSON Snippets
+
+  'EJSON.parse':
+    'prefix': 'parse'
+    'body': 'EJSON.parse(${1:string});',
+  'EJSON.stringify':
+    'prefix': 'stringify'
+    'body': 'EJSON.stringify(${1:string}, {indent: true});',
+  'EJSON.clone':
+    'prefix': 'clone'
+    'body': 'EJSON.clone(${1:object});',
+  'EJSON.equals':
+    'prefix': 'deeequals'
+    'body': 'EJSON.equals(${1:objectA}, ${2:objectB});',
+  'EJSON.toJSONValue':
+    'prefix': 'toJSON'
+    'body': 'EJSON.toJSONValue(${1:value});',
+  'EJSON.fromJSONValue':
+    'prefix': 'fromJSON'
+    'body': 'EJSON.fromJSONValue(${1:value});',
+  'EJSON.isBinary':
+    'prefix': 'isBinary'
+    'body': 'EJSON.isBinary(${1:value});',
+
+#===================================================
+# HTTP Snippets
+
+  'HTTP Call':
+    'prefix': 'httpcall'
+    'body': 'HTTP.call("${1:meteorMethod}", function(error, result){
+    \n\tif(error){
+    \n\t\tconsole.log("error", error);
+    \n\t}
+    \n\tif(result){
+    \n\t\t${2:}
+    \n\t}
+    \n});',
+  'HTTP Get':
+    'prefix': 'httpget'
+    'body': 'HTTP.get("${1:meteorMethod}", function(error, result){
+    \n\tif(error){
+    \n\t\tconsole.log("error", error);
+    \n\t}
+    \n\tif(result){
+    \n\t\t${2:}
+    \n\t}
+    \n});',
+  'HTTP.post':
+    'prefix': 'httppost'
+    'body': 'HTTP.post("${1:meteorMethod}", ${2:dataObject}, function(error, result){
+    \n\tif(error){
+    \n\t\tconsole.log("error", error);
+    \n\t}
+    \n\tif(result){
+    \n\t\t${3:}
+    \n\t}
+    \n});',
+  'HTTP.put':
+    'prefix': 'http.put'
+    'body': 'HTTP.put("${1:meteorMethod}", ${2:dataObject}, function(error, result){
+    \n\tif(error){
+    \n\t\tconsole.log("error", error);
+    \n\t}
+    \n\tif(result){
+    \n\t\t${3:}
+    \n\t}
+    \n});',
+  'HTTP.del':
+    'prefix': 'httpdel'
+    'body': 'HTTP.del("${1:meteorMethod}", function(error, result){
+    \n\tif(error){
+    \n\t\tconsole.log("error", error);
+    \n\t}
+    \n\tif(result){
+    \n\t\t${2:}
+    \n\t}
+    \n});',
+
+
+
+
+#===================================================
+# Email Snippets
+
+  'Email.send':
+    'prefix': 'Email'
+    'body': 'Email.send({
+      \n\tfrom: "${1:sender@somewhere.net}",
+      \n\tto: "${2:receiver@elsewhere.io}",
+      \n\tcc: "${3:carboncopy@elsewhere.io}",
+      \n\tbcc: "${4:lurker@somewhere.io}",
+      \n\treplyTo: "${5:public@somewhere.net}",
+      \n\tsubject: "${6:Hello Email}",
+      \n\ttext: "${7:lorem ispum...}",
+      \n\thtml: "${8:}",
+      \n\theaders: "${9:}",
+      \n});',
+
+
+#===================================================
+# Assets Snippets
+
+
+  'Assets.getText':
+    'prefix': 'getText'
+    'body': 'Assets.getText("${1:assetPath}", function(error, result){
+      \n\tif(error){
+      \n\t\tconsole.log("error", error);
+      \n\t}
+      \n\tif(result){
+      \n\t\t${2:}
+      \n\t}
+      \n});',
+  'Assets.getBinary':
+    'prefix': 'getBinary'
+    'body': 'Assets.getBinary("${1:assetPath}", function(error, result){\n\tif(error){
+    \n\t\tconsole.log("error", error);
+    \n\t}
+    \n\tif(result){
+    \n\t\t${2:}
+    \n\t}
+    \n});',
+
+
+#===================================================
+# Router Snippets
+
+  'Router':
+    'prefix': 'Router'
+    'body': '
+      Router.map(function(){
+      \n\tthis.route("${1:routeName}"{
+      \n\t\t${2}
+      \n\t});
+      \n});
+    ',
+  'route':
+    'prefix': 'route'
+    'body': '
+      this.route("${1:routeName}"{
+      \n\tpath:"${2}",
+      \n\ttemplate:"${3}",
+      \n\twaitOn:function(){
+      \n\t\t${4}
+      \n\t},
+      \n\tdata:function(){
+      \n\t\t${5}
+      \n\t},
+      \n\tonBeforeAction:function(){
+      \n\t\tsetPageTitle("${6}");
+      \n\t},
+      \n\tonAfterAction:function(){
+      \n\t\t${7}
+      \n\t},
+      \n});
+    ',
+  'Upsert Route':
+    'prefix': 'UpsertRoute'
+    'body': '
+      Router.map(function(){
+        \n\tthis.route("${1:routeName}"{
+        \n\t\tpath:"/${2:route}/add",
+        \n\t\ttemplate:"${3:routeTemplate}",
+        \n\t\twaitOn:function(){
+        \n\t\t\t${4}
+        \n\t\t},
+        \n\t\tdata:function(){
+        \n\t\t\treturn {};
+        \n\t\t},
+        \n\t\tonBeforeAction:function(){
+        \n\t\t\tsetPageTitle("${5}");
+        \n\t\t},
+        \n\t\tonAfterAction:function(){
+        \n\t\t\t${6}
+        \n\t\t},
+        \n\t});
+
+        \n\tthis.route("${7:routeName}"{
+        \n\t\tpath:"/${8}/edit/${9:paramId}",
+        \n\t\ttemplate:"${10: routeTemplate}",
+        \n\t\twaitOn:function(){
+        \n\t\t\treturn Meteor.subscribe("${11: subscription}");
+        \n\t\t},
+        \n\t\tdata:function(){
+        \n\t\t\treturn ${12: Collection}.findOne(this.params.${13: paramId});
+        \n\t\t},
+        \n\t\tonBeforeAction:function(){
+        \n\t\t\tsetPageTitle("${14}");
+        \n\t\t},
+        \n\t\tonAfterAction:function(){
+        \n\t\t\t${15}
+        \n\t\t},
+        \n\t});
+      \n});
+    ',
+
+
+#===================================================
+# Template + Router
+
+  'Page':
+    'prefix': 'page'
+    'body': '
+      Router.map(function(){
+      \n\tthis.route("${1:routeName}", {
+      \n\t\tpath: "/${2:route}",
+      \n\t\ttemplate: "${3:pageTemplate}",
+      \n\t\tonBeforeAction: function () {
+      \n\t\t\tsetPageTitle("${4:Page Title}");
+      \n\t\t}
+      \n\t});
+      \n});
+      \n
+      \nTemplate.${5:pageTemplate}.helpers({
+      \n\trendered: function(){
+      \n\t\t${6:}
+      \n\t}
+      \n});
+      \n\nTemplate.${7:pageTemplate}.events({
+      \n\t"${8:click #foo}": function(event, template){
+      \n\t\t${9:}
+      \n\t}
+      \n});
+    ',
+
+#===================================================
+# Nightwatch
+
+  'verify.elementPresent':
+    'prefix': 'vep'
+    'body': '.verify.elementPresent("#${1}")${2}',
+
+  'verify.elementNotPresent':
+    'prefix': 'venp'
+    'body': '.verify.elementNotPresent("#${1}")${2}',
+
+  'waitForElementVisible':
+    'prefix': 'wfev'
+    'body': '.waitForElementVisible("#${1}", ${2})${3}',
+
+  'containsText':
+    'prefix': 'vct'
+    'body': '.verify.containsText("#${1}", "${2}")${3}',
+
+  'click':
+    'prefix': 'click'
+    'body': '.click("#${1}").pause(${2})${3}',
+
+  'attributeEquals':
+    'prefix': 'ae'
+    'body': '.verify.attributeEquals("#${1}", "value", "${2}")${3}',
+
+
+
+
+#===================================================
+# Stylesheet / View Snippets
+
+
+
+
+
+'.less':
+  'Responsive Stylesheets':
+    "prefix": "mobile"
+    "body": 'media'
