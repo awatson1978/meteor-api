@@ -1,14 +1,15 @@
 {
   "name": "meteor-api",
   "main": "./lib/meteor-api",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Meteor API with tab completion and syntax highlighting.",
-  "activationEvents": ["meteor-api:toggle"],
+  "activationEvents": [
+    "meteor-api:toggle"
+  ],
   "repository": "https://github.com/awatson1978/meteor-api",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
