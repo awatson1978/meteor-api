@@ -2,7 +2,7 @@
   "name": "meteor-api",
   "main": "./lib/meteor-api",
   "version": "0.4.0",
-  "description": "Meteor API with tab completion and syntax highlighting.",
+  "description": "Meteor API for the Atom editor.",
   "activationEvents": [
     "meteor-api:toggle"
   ],
