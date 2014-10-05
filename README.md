@@ -1,8 +1,7 @@
 Meteor API for the Atom Editor
 =======================================
 
-Bring Isomorphic javascript to the editor with Meteor API code snippets and grammar/syntax highlighting!  Simply go to **Atom > Preferences > Packages** and search for ``Meteor Api``.  
-
+Bring Isomorphic javascript to the editor with Meteor API code snippets and grammar/syntax highlighting!  Simply go to **Atom > Preferences > Packages**, search for ``Meteor Api``, and install the package!
 
 
 ---------------------------------------
