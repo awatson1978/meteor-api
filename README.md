@@ -1,7 +1,7 @@
 Meteor API for the Atom Editor
 =======================================
 
-Bring Isomorphic Meetor javascript to the editor with code snippets, color-coded grammar, syntax highlighting, and more!  Code faster and with fewer mistakes!  
+Bring Isomorphic Meetor javascript to the editor with autocomplete, code snippets, color-coded grammar, syntax highlighting, and more!  Code faster and with fewer mistakes!  
 
 ---------------------------------------
 #### Meteor API Version  
