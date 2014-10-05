@@ -5,15 +5,15 @@ Bring Isomorphic javascript to the editor with Meteor API code snippets and gram
 
 
 ---------------------------------------
-#### Color Coded Meteor Syntax
-
-[Complete List of Covered Meteor API Syntax](https://github.com/awatson1978/meteor-api-for-atom-editor/blob/master/api.md)
+#### Color Coded Meteor Syntax  
 
 ![Meteor-Api Code Sample](https://raw.githubusercontent.com/awatson1978/meteor-api/master/screenshots/code-sample.png)  
 
 
 ---------------------------------------
 #### Meteor API Code Snippets  
+
+[Complete List of Covered Meteor API Syntax](https://github.com/awatson1978/meteor-api-for-atom-editor/blob/master/api.md)
 
 ![Meteor-Api Grammar](https://github.com/awatson1978/meteor-api/blob/master/screenshots/grammar-snippets.png)  
 
