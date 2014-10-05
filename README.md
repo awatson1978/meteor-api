@@ -8,6 +8,8 @@ Bring Isomorphic javascript to the editor with Meteor API code snippets and gram
 ---------------------------------------
 #### Color Coded Meteor Syntax  
 
+All of the Meteor API should be color coded.  
+
 ![Meteor-Api Code Sample](https://raw.githubusercontent.com/awatson1978/meteor-api/master/screenshots/code-sample.png)  
 
 
