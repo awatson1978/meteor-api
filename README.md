@@ -8,8 +8,6 @@ Bring Isomorphic javascript to the editor with Meteor API code snippets and gram
 ---------------------------------------
 #### Color Coded Meteor Syntax  
 
-All of the Meteor API should be color coded.  
-
 ![Meteor-Api Code Sample](https://raw.githubusercontent.com/awatson1978/meteor-api/master/screenshots/code-sample.png)  
 
 
@@ -25,7 +23,7 @@ All of the Meteor API should be color coded.
 ---------------------------------------
 #### Setting Up Atom As an Integrated Development Environment
 
-If you want a complete javascript IDE experience with, we recommend the following packages to run with Meteor API Snippets.
+If you want even more Meteor integration, try installing the following packages for an integrated, isomorphic, pure-javascript development environment.  (This list will be updated as new packages are added to the Atom ecosystem).  
 
 ````sh
 Atom Lint
@@ -49,6 +47,8 @@ Wrap Guide
 
 ---------------------------------------
 #### Open Files From the Command Line
+
+If you haven't created a symlink for atom, try the following snippet to launch Atom from the command line.  
 
 ````sh
 # link your atom binary so it can be run from the command line
