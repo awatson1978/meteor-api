@@ -10,65 +10,36 @@
 'name': 'JavaScript (Meteor)'
 'patterns': [
   {
-    'match': 'Meteor'
-    'name': 'api.meteor'
-  }
-  {
-    'match': '(isClient|isServer|startup|absolute)'
+    'match': '(Meteor.isClient|Meteor.isServer|Meteor.isCordova|Meteor.startup|Meteor.absolute)'
     'name': 'api.meteor.core'
   }
   {
-    'match': '(?<!\\.)\\b(Collection)(?!\\s*:)\\b'
-    'name': 'api.meteor.ddp'
-  }
-  {
-    'match': '(publish|subscribe)'
-    'name': 'api.meteor.ddp.functions'
-  }
-  {
-    'match': '(?<!\\.)\\b(HTTP)(?!\\s*:)\\b'
+    'match': '(Meteor.publish|Meteor.subscribe)'
     'name': 'api.meteor.ddp'
   }
   {
     'match': '(HTTP.get|HTTP.post|HTTP.call|HTTP.put|HTTP.del)'
-    'name': 'api.meteor.ddp.functions'
+    'name': 'api.meteor.http'
   }
   {
-    'match': '(?<!\\.)\\b(Collection)(?!\\s*:)\\b'
+    'match': '(Session.setDefault|Session.set|Session.get|Session.equals|Session.toggle|Session.clear)'
+    'name': 'api.meteor.session'
+  }
+  {
+    'match': '(([a-zA-Z_?.$][\\w?.$]*)\\.findOne|([a-zA-Z_?.$][\\w?.$]*)\\.find|([a-zA-Z_?.$][\\w?.$]*)\\.update|([a-zA-Z_?.$][\\w?.$]*)\\.upsert|([a-zA-Z_?.$][\\w?.$]*)\\.remove|([a-zA-Z_?.$][\\w?.$]*)\\.insert)'
     'name': 'api.meteor.collection'
   }
   {
-    'match': '(find|findOne|update|upsert|remove|insert)'
-    'name': 'api.meteor.collection.function'
-  }
-
-  {
-    'match': '(?<!\\.)\\b(Template)(?!\\s*:)\\b'
+    'match': 'Template.(.*).events|Template.(.*).helpers|Template.(.*).rendered|Template.(.*).created|Template.(.*).destroyed|Template.registerHelper'
     'name': 'api.meteor.template'
   }
   {
-    'match': '(events|helpers|registerHelper)'
-    'name': 'api.meteor.template.api'
-  }
-  {
-    'match': '(events|helpers|rendered|created|destroyed|registerHelper)'
-    'name': 'api.meteor.template.functions'
-  }
-  {
-    'match': '(?<!\\.)\\b(Blaze)(?!\\s*:)\\b'
+    'match': '(Blaze.render|Blaze.renderWithData|Blaze.remove|Blaze.getData|Blaze.toHTML|Blaze.toHTMLWithData|Blaze.isTemplate)'
     'name': 'api.meteor.blaze'
   }
   {
-    'match': '(render|renderWithData|remove|getData|toHTML|toHTMLWithData|isTemplate)'
-    'name': 'api.meteor.blaze.functions'
-  }
-  {
-    'match': '(?<!\\.)\\b(Router)(?!\\s*:)\\b'
+    'match': '(Router.map|Router.go|Router.configure|this.route)'
     'name': 'api.meteor.router'
-  }
-  {
-    'match': '(map|route)'
-    'name': 'api.meteor.router.functions'
   }
 
 
@@ -115,20 +86,20 @@
       }
     ]
   }
-  # {
-  #   'captures':
-  #     '1':
-  #       'name': 'support.class.js'
-  #     '2':
-  #       'name': 'support.constant.js'
-  #     '3':
-  #       'name': 'entity.name.function.js'
-  #     '4':
-  #       'name': 'keyword.operator.js'
-  #   'comment': 'match stuff like: Sound.prototype.play = myfunc'
-  #   'match': '([a-zA-Z_?.$][\\w?.$]*)\\.(prototype)\\.([a-zA-Z_?.$][\\w?.$]*)\\s*(=)\\s*'
-  #   'name': 'meta.function.js'
-  # }
+  {
+    'captures':
+      '1':
+        'name': 'support.class.js'
+      '2':
+        'name': 'support.constant.js'
+      '3':
+        'name': 'entity.name.function.js'
+      '4':
+        'name': 'keyword.operator.js'
+    'comment': 'match stuff like: Sound.prototype.play = myfunc'
+    'match': '([a-zA-Z_?.$][\\w?.$]*)\\.(prototype)\\.([a-zA-Z_?.$][\\w?.$]*)\\s*(=)\\s*'
+    'name': 'meta.function.js'
+  }
   {
     'begin': '([a-zA-Z_?.$][\\w?.$]*)\\.([a-zA-Z_?.$][\\w?.$]*)\\s*(=)\\s*(function\\*?)\\s*(\\*?)(\\()'
     'beginCaptures':
@@ -409,10 +380,10 @@
     'match': '(?<!\\.)\\bnull(?!\\s*:)\\b'
     'name': 'constant.language.null.js'
   }
-  # {
-  #   'match': '(?<!\\.)\\b(super|this)(?!\\s*:)\\b'
-  #   'name': 'variable.language.js'
-  # }
+  {
+    'match': '(?<!\\.)\\b(super|this)(?!\\s*:)\\b'
+    'name': 'variable.language.js'
+  }
   # {
   #   'match': '(?<!\\.)\\b(debugger)(?!\\s*:)\\b'
   #   'name': 'keyword.other.js'
