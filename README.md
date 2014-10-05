@@ -10,7 +10,7 @@ Bring Isomorphic javascript to the editor with Meteor API code snippets and gram
 
 [Complete List of Covered Meteor API Syntax](https://github.com/awatson1978/meteor-api-for-atom-editor/blob/master/api.md)
 
-![Meteor-Api Code Sample](http://github.com/awatson1978/meteor-api/screenshots/code-sample.png)  
+![Meteor-Api Code Sample](https://raw.githubusercontent.com/awatson1978/meteor-api/master/screenshots/code-sample.png)  
 
 
 ---------------------------------------
