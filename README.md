@@ -6,6 +6,11 @@ Bring Isomorphic javascript to the editor with Meteor API code snippets and gram
 ![Javascript Grammar Select](https://raw.githubusercontent.com/awatson1978/meteor-api/master/screenshots/javascript-meteor-select.png)  
 
 ---------------------------------------
+#### Meteor API Version  
+
+0.9.3
+
+---------------------------------------
 #### Color Coded Meteor Syntax  
 
 ![Meteor-Api Code Sample](https://raw.githubusercontent.com/awatson1978/meteor-api/master/screenshots/code-sample.png)  
