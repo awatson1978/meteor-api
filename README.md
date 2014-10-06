@@ -88,7 +88,7 @@ A big shoutout to ThusStyles for piecing together the original [meteor-snippets]
 [Meteor Version of Extract Method](https://atom.io/packages/extract-method)  
 [Meteor Symbols](https://github.com/atom/symbols-view)  
 [Meteor Symbols: Goto Declaration](https://github.com/atom/symbols-view/issues/9)  
-[]
+
 
 ``ctags -R .`` for extracting method definitions; add ctags file to meteor projects
 
