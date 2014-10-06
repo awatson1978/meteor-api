@@ -3,9 +3,6 @@
   "main": "./lib/meteor-api",
   "version": "0.21.0",
   "description": "Meteor API for the Atom editor.",
-  "activationEvents": [
-    "meteor-api:toggle"
-  ],
   "repository": "https://github.com/awatson1978/meteor-api",
   "license": "MIT",
   "engines": {
