@@ -39,6 +39,7 @@ If you want even more Meteor integration, try installing the following packages 
 ````sh
 Atom Lint
 Atom Beautify
+Atom Handlebars
 Atom Jshint
 Atom Prettify
 Angularjs
