@@ -81,11 +81,13 @@ A big shoutout to ThusStyles for piecing together the original [meteor-snippets]
 ---------------------------------------
 #### Todo
 
-[Blaze/Spacebars Syntax Highlightin](http://stackoverflow.com/questions/22363070/how-do-i-make-a-default-syntax-by-filetype-in-atom-text-editor)  
+[Blaze Syntax Highlighting](http://stackoverflow.com/questions/22363070/how-do-i-make-a-default-syntax-by-filetype-in-atom-text-editor)  
+[Handelbars/Spacebars Syntax](https://atom.io/packages/atom-handlebars)  
 [Meteor Version of Autocomplete](https://atom.io/packages/autocomplete-plus)  
 [Meteor Version of Extract Method](https://atom.io/packages/extract-method)  
 [Meteor Symbols](https://github.com/atom/symbols-view)  
 [Meteor Symbols: Goto Declaration](https://github.com/atom/symbols-view/issues/9)  
+[]
 
 ``ctags -R .`` for extracting method definitions; add ctags file to meteor projects
 
