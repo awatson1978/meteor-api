@@ -27,7 +27,7 @@
   }
   {
     'match': '(([a-zA-Z_?.$][\\w?.$]*)\\.findOne|([a-zA-Z_?.$][\\w?.$]*)\\.find|([a-zA-Z_?.$][\\w?.$]*)\\.update|([a-zA-Z_?.$][\\w?.$]*)\\.upsert|([a-zA-Z_?.$][\\w?.$]*)\\.remove|([a-zA-Z_?.$][\\w?.$]*)\\.insert)'
-    'name': 'api.meteor.collection'
+    'name': 'api.mongo.collection'
   }
   {
     'match': 'Template.(.*).events|Template.(.*).helpers|Template.(.*).rendered|Template.(.*).created|Template.(.*).destroyed|Template.registerHelper'

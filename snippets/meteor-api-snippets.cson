@@ -156,9 +156,9 @@
 #===================================================
 # Collections
 
-  'Meteor.Collection.ObjectID':
+  'Mongo.Collection.ObjectID':
     'prefix': 'object'
-    'body': 'new Meteor.Collection.ObjectID("${1:id}")',
+    'body': 'new Mongo.Collection.ObjectID("${1:id}")',
 
   'Collection.find':
     'prefix': 'find'
@@ -216,7 +216,7 @@
 
   'Collection':
     'prefix': 'Collection'
-    'body': '${1:CollectionName} = new Meteor.Collection("${2:name}");
+    'body': '${1:CollectionName} = new Mongo.Collection("${2:name}");
       \n${3:CollectionName}.allow({
       \n\tinsert: function(){
       \n\t\treturn ${4:true};
