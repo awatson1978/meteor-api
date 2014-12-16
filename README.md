@@ -48,14 +48,35 @@ Atom Bootstrap
 Autocomplete
 Autocomplete +
 Bracket Matcher
+File Types
 Filetype Color
 Grammar Selector
+Language Spacebars
 Meteor Api
 Meteor Helper
 Orbit
 Wrap Guide
 ````
 
+Then open your `config.cson` file with **Atom > Edit > Open Your Config** and add the following under `global`:
+
+````cson
+  'file-types':
+    'html': 'text.html.spacebars'
+    'js': 'source.js'
+````
+
+##### Enabling Handlebars Linting (a bit more hacky)
+
+1. go to **Atom > Preferences > Packages**, search for ``Linter Handlebars`` and install the package
+2. click on `Settings` to open its settings page and click on ``Open in Atom``
+3. edit the file `linter-handlebars/lib/linter-handlebars.cofee` and add `text.html.spacebars` to the list of supported syntaxes. At the time of writing this list appears on [line 7](https://github.com/AtomLinter/linter-handlebars/blob/master/lib/linter-handlebars.coffee#L7): make sure it eventually looks like:
+
+````coffeescript
+  @syntax: ['text.html.handlebars', 'source.hbs', 'source.handlebars', 'text.html.spacebars']
+````
+
+Please be aware that you might need to repeat this editing operation everytime the package  ``Linter Handlebars`` gets updated.
 
 ---------------------------------------
 #### Open Files From the Command Line
