@@ -839,11 +839,11 @@
 
   'Meteor.startup':
     'prefix': 'startup'
-    'body': 'Meteor.startup_->\n\t'
+    'body': 'Meteor.startup ->\n\t'
 
   'Meteor.absoluteUrl':
     'prefix': 'absolute'
-    'body': 'Meteor.absoluteUrl_"$1"'
+    'body': 'Meteor.absoluteUrl "$1"'
 
 
 #===================================================
@@ -851,7 +851,7 @@
 
   'Meteor Publish':
     'prefix': 'publish'
-    'body': 'Meteor.publish_"${1:name}",_(${2:args})_->\n\t'
+    'body': 'Meteor.publish "${1:name}", (${2:args}) ->\n\t'
 
   'Meteor Subscribe':
     'prefix': 'subscribe'
