@@ -17,7 +17,7 @@
 
 
 #===================================================
-# HTML / Document Object Model Snippets
+# HTML / Document Object Model Snippets:
 
 '.html':
   'Blaze Template':
@@ -694,7 +694,7 @@
     'prefix': 'Router'
     'body': '
       Router.map(function(){
-      \n\tthis.route("${1:routeName}"{
+      \n\tthis.route("${1:routeName}",{
       \n\t\t${2}
       \n\t});
       \n});
@@ -702,7 +702,7 @@
   'route':
     'prefix': 'route'
     'body': '
-      this.route("${1:routeName}"{
+      this.route("${1:routeName}",{
       \n\tpath:"${2}",
       \n\ttemplate:"${3}",
       \n\twaitOn:function(){
@@ -723,7 +723,7 @@
     'prefix': 'UpsertRoute'
     'body': '
       Router.map(function(){
-        \n\tthis.route("${1:routeName}"{
+        \n\tthis.route("${1:routeName},"{
         \n\t\tpath:"/${2:route}/add",
         \n\t\ttemplate:"${3:routeTemplate}",
         \n\t\twaitOn:function(){
@@ -740,7 +740,7 @@
         \n\t\t},
         \n\t});
 
-        \n\tthis.route("${7:routeName}"{
+        \n\tthis.route("${7:routeName}",{
         \n\t\tpath:"/${8}/edit/${9:paramId}",
         \n\t\ttemplate:"${10: routeTemplate}",
         \n\t\twaitOn:function(){
