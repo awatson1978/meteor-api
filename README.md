@@ -25,7 +25,7 @@ Simply go to **Atom > Preferences > Packages**, search for ``Meteor Api``, and i
 ---------------------------------------
 #### Meteor API Code Snippets  
 
-[Complete List of Covered Meteor API Syntax](https://github.com/awatson1978/meteor-api-for-atom-editor/blob/master/api.md)
+[Complete List of Covered Meteor API Syntax](https://github.com/awatson1978/meteor-api/blob/master/api.md)
 
 ![Meteor-Api Grammar](https://raw.githubusercontent.com/awatson1978/meteor-api/master/screenshots/grammar-snippets.png)  
 
