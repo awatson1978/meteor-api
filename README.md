@@ -6,7 +6,7 @@ Bring Isomorphic Meteor javascript to the editor with autocomplete, code snippet
 ---------------------------------------
 #### Meteor API Version  
 
-0.9.3
+1.0.3.1
 
 ---------------------------------------
 #### Installation  
