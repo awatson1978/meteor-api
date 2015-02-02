@@ -667,72 +667,78 @@
 #===================================================
 # Router Snippets
 
+  'Router.configure':
+    'prefix': 'configure'
+    'body': '
+      Router.route({
+      \n\tlayoutTemplate:"${1:layoutTemplate}",
+      \n\tnotFoundTemplate:"${2:notFoundTemplate}",
+      \n\tloadingTemplate:"${3:loadingTemplate}",
+      \n\tyieldRegions:{
+      \n\t\t"${4:myAside}": {to: "aside"},
+      \n\t\t"${5:myHeader}": {to: "header"}
+      \n\t\t"${6:myFooter}": {to: "footer"}
+      \n\t}
+    '
   'Router':
     'prefix': 'Router'
     'body': '
-      Router.map(function(){
-      \n\tthis.route("${1:routeName}",{
-      \n\t\t${2}
-      \n\t});
+      Router.route("${1:routePath}", function(){
+      \n\tthis.layout("${2:ApplicationLayout}");
+      \n\tthis.render("${5:PostHeader}", {to: "header"});
+      \n\tthis.render("${4:PostAside}", {to: "aside"});
+      \n\tthis.render("${3:Post}");
+      \n\tthis.render("${5:PostFooter}", {to: "footer"});
       \n});
     '
   'route':
     'prefix': 'route'
     'body': '
-      this.route("${1:routeName}",{
-      \n\tpath:"${2}",
-      \n\ttemplate:"${3}",
+      Router.route("${1:routePath}", {
+      \n\tname:"${2:routeName}",
+      \n\ttemplate:"${3:templateName}",
       \n\twaitOn:function(){
-      \n\t\t${4}
+      \n\t\t${4:subscriptions}
       \n\t},
       \n\tdata:function(){
-      \n\t\t${5}
+      \n\t\t${5: dataFunction}
       \n\t},
       \n\tonBeforeAction:function(){
-      \n\t\tsetPageTitle("${6}");
+      \n\t\t${6}
       \n\t},
       \n\tonAfterAction:function(){
       \n\t\t${7}
+      \n\t},
+      \n\tonRun:function(){
+      \n\t\t${8}
+      \n\t},
+      \n\tonReRun:function(){
+      \n\t\t${9}
       \n\t},
       \n});
     '
   'Upsert Route':
     'prefix': 'UpsertRoute'
     'body': '
-      Router.map(function(){
-        \n\tthis.route("${1:routeName},"{
-        \n\t\tpath:"/${2:route}/add",
-        \n\t\ttemplate:"${3:routeTemplate}",
-        \n\t\twaitOn:function(){
-        \n\t\t\t${4}
-        \n\t\t},
-        \n\t\tdata:function(){
-        \n\t\t\treturn {};
-        \n\t\t},
-        \n\t\tonBeforeAction:function(){
-        \n\t\t\tsetPageTitle("${5}");
-        \n\t\t},
-        \n\t\tonAfterAction:function(){
-        \n\t\t\t${6}
-        \n\t\t},
-        \n\t});
+      Router.route("/add/${1:routePath},"{
+      \n\tname:"${2:routeName}",
+      \n\ttemplate:"${3:routeTemplate}"
+      \n});
 
-        \n\tthis.route("${7:routeName}",{
-        \n\t\tpath:"/${8}/edit/${9:paramId}",
-        \n\t\ttemplate:"${10: routeTemplate}",
-        \n\t\twaitOn:function(){
-        \n\t\t\treturn Meteor.subscribe("${11: subscription}");
-        \n\t\t},
-        \n\t\tdata:function(){
-        \n\t\t\treturn ${12: Collection}.findOne(this.params.${13: paramId});
-        \n\t\t},
-        \n\t\tonBeforeAction:function(){
-        \n\t\t\tsetPageTitle("${14}");
-        \n\t\t},
-        \n\t\tonAfterAction:function(){
-        \n\t\t\t${15}
-        \n\t\t},
-        \n\t});
+      Router.route("/edit/${1:routePath}/:${4:paramId},"{
+      \n\tname:"${2:routeName}",
+      \n\ttemplate:"${3:routeTemplate}"
+      \n\tdata:function(){
+      \n\t\treturn ${5: collectionName}.findOne({_id: this.params.${4:paramId}});
+      \n\t},
+      \n\tonBeforeAction:function(){
+      \n\t\tSession.set("${7}", this.params.${4:paramId}});
+      \n\t\t${8}
+      \n\t\tthis.next();
+      \n\t},
+      \n\tonAfterAction:function(){
+      \n\t\t${9}
+      \n\t},
       \n});
     '
 
@@ -743,24 +749,19 @@
   'Page':
     'prefix': 'page'
     'body': '
-      Router.map(function(){
-      \n\tthis.route("${1:routeName}", {
-      \n\t\tpath: "/${2:route}",
-      \n\t\ttemplate: "${3:pageTemplate}",
-      \n\t\tonBeforeAction: function () {
-      \n\t\t\tsetPageTitle("${4:Page Title}");
-      \n\t\t}
-      \n\t});
+      Router.route("${1:routePath}", {
+      \n\tname:"${2:routeName}",
+      \n\ttemplate:"${3:templateName}"
       \n});
       \n
-      \nTemplate.${5:pageTemplate}.helpers({
+      \nTemplate.${4:pageTemplate}.helpers({
       \n\trendered: function(){
-      \n\t\t${6:}
+      \n\t\t${5:}
       \n\t}
       \n});
-      \n\nTemplate.${7:pageTemplate}.events({
-      \n\t"${8:click #foo}": function(event, template){
-      \n\t\t${9:}
+      \n\nTemplate.${4:pageTemplate}.events({
+      \n\t"${6:click} #${7:elementId}": function(event, template){
+      \n\t\t${8}
       \n\t}
       \n});
     '
