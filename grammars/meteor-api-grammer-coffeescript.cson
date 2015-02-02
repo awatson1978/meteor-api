@@ -1,6 +1,6 @@
 
 'scopeName': 'source.coffee'
-'name': 'CoffeeScript (Meteor)'
+'name': 'KoffeeScript (Meteor)'
 'fileTypes': [
   'coffee'
   'Cakefile'
