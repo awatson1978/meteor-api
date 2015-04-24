@@ -1,0 +1,25 @@
+".text.html.spacebars":
+  "if":
+    "prefix": "if"
+    "body": "{{#if ${1:condition}}}\n\t$0\n{{/if}}"
+  "if - else":
+    "prefix": "ife"
+    "body": "{{#if ${1:condition}}}\n\t$0\n{{else}}\n\t$1\n{{/if}}"
+  "unless":
+    "prefix": "un"
+    "body": "{{#unless ${1:condition}}}\n\t$0\n{{/unless}}"
+  "unless - else":
+    "prefix": "une"
+    "body": "{{#unless ${1:condition}}}\n\t$0\n{{else}}\n\t$1\n{{/unless}}"
+  "with":
+    "prefix": "wt"
+    "body": "{{#with ${1:item}}}\n\t$0\n{{/with}}"
+  "with - else":
+    "prefix": "wte"
+    "body": "{{#with ${1:item}}}\n\t$0\n{{else}}\n\t$1\n{{/with}}"
+  "each":
+    "prefix": "ea"
+    "body": "{{#each ${1:items}}}\n\t$0\n{{/each}}"
+  "partial":
+    "prefix": "pa"
+    "body": "{{> ${1:template} }}"
