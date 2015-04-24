@@ -679,6 +679,7 @@
       \n\t\t"${5:myHeader}": {to: "header"}
       \n\t\t"${6:myFooter}": {to: "footer"}
       \n\t}
+      \n});
     '
   'Router':
     'prefix': 'Router'
@@ -714,7 +715,7 @@
       \n\t},
       \n\tonReRun:function(){
       \n\t\t${9}
-      \n\t},
+      \n\t}
       \n});
     '
   'Upsert Route':

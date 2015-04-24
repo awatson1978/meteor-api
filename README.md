@@ -16,6 +16,8 @@ Simply go to **Atom > Preferences > Packages**, search for ``Meteor Api``, and i
 ![Javascript Grammar Select](https://raw.githubusercontent.com/awatson1978/meteor-api/master/screenshots/javascript-meteor-select.png)  
 
 
+If you'd like to permanently make all javascript default to the ``Javascript (Meteor)`` grammar, disable the ``language-javascript`` package!
+
 ---------------------------------------
 #### Color Coded Meteor Syntax  
 
@@ -54,7 +56,6 @@ Grammar Selector
 Language Spacebars
 Meteor Api
 Meteor Helper
-Orbit
 Wrap Guide
 ````
 
@@ -97,7 +98,7 @@ atom helloworld.js
 ---------------------------------------
 #### Acknowledgements / Contributors
 
-A big shoutout to ThusStyles for piecing together the original [meteor-snippets](https://github.com/ThusStyles/meteor-snippets) atom package!
+A big shoutout to ThusStyles for piecing together the original [meteor-snippets](https://github.com/ThusStyles/meteor-snippets) atom package!  And to zaku-eu for [language-spacebars](https://atom.io/packages/language-spacebars)!
 
 
 ---------------------------------------
