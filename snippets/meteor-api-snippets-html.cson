@@ -64,7 +64,7 @@
     'body': '<br>'
   'Button':
     'prefix': 'button'
-    'body': '<button name="${1:button}">$2</button>$0'
+    'body': '<button id="${1:button}">$2</button>$0'
   # C
   'Canvas':
     'prefix': 'canvas'
@@ -343,7 +343,7 @@
     'body': '<td>\n\t$1\n</td>'
   'Template':
     'prefix': 'template'
-    'body': '<template id="$1">\n\t$2\n</template>'
+    'body': '<template name="$1">\n\t$2\n</template>'
   'Text Area':
     'prefix': 'textarea'
     'body': '<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">$4</textarea>$0'
