@@ -100,6 +100,30 @@ atom helloworld.js
 
 A big shoutout to ThusStyles for piecing together the original [meteor-snippets](https://github.com/ThusStyles/meteor-snippets) atom package!  And to zaku-eu for [language-spacebars](https://atom.io/packages/language-spacebars)!
 
+---------------------------------------
+#### Hacking on the Package
+
+Want to make modifications?  Take a look at your ``~/.atom/packages`` directory.  You should find ``~/.atom/packages/meteor-api``.  Move that somewhere, and clone this repo where it used to be.  (You'll want to fork it first to your own account.)
+
+````sh
+# download the meteor-api package to the correct location
+cd ~/.atom/packages
+mv meteor-api meteor-api-bkup
+git clone http://github.com/damonmcminn/meteor-api
+cd meteor-api
+
+# make sure you're on a feature branch 
+git branch
+git checkout -b syntax-highlighting
+
+# open a new atom editor in the current directory
+# we're using atom to hack on an atom package; spiffy recursive recursive!
+atom .  
+```` 
+You'll then want to go into the ``meteor-api/grammars/`` directory and start hacking on ``meteor-api-grammar-javascript.cson`` and the other files there.  
+
+The hotkey command to reload the packages into Atom is ``Control+Option+Command+L``.  
+
 
 ---------------------------------------
 #### Todo
