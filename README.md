@@ -128,12 +128,12 @@ The hotkey command to reload the packages into Atom is ``Control+Option+Command+
 ---------------------------------------
 #### Todo
 
-[Blaze Syntax Highlighting](http://stackoverflow.com/questions/22363070/how-do-i-make-a-default-syntax-by-filetype-in-atom-text-editor)  
-[Handelbars/Spacebars Syntax](https://atom.io/packages/atom-handlebars)  
-[Meteor Version of Autocomplete](https://atom.io/packages/autocomplete-plus)  
-[Meteor Version of Extract Method](https://atom.io/packages/extract-method)  
-[Meteor Symbols](https://github.com/atom/symbols-view)  
-[Meteor Symbols: Goto Declaration](https://github.com/atom/symbols-view/issues/9)  
+- [x] [Blaze Syntax Highlighting](http://stackoverflow.com/questions/22363070/how-do-i-make-a-default-syntax-by-filetype-in-atom-text-editor)  
+- [x] [Handelbars/Spacebars Syntax](https://atom.io/packages/atom-handlebars)  
+- [ ] [Meteor Version of Autocomplete](https://atom.io/packages/autocomplete-plus)  
+- [ ] [Meteor Version of Extract Method](https://atom.io/packages/extract-method)  
+- [ ] [Meteor Symbols](https://github.com/atom/symbols-view)  
+- [ ] [Meteor Symbols: Goto Declaration](https://github.com/atom/symbols-view/issues/9)  
 
 
 ``ctags -R .`` for extracting method definitions; add ctags file to meteor projects
