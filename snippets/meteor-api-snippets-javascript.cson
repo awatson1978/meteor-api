@@ -438,7 +438,7 @@
 
   'Template Rendered':
     'prefix': 'rendered'
-    'body': 'Template.${1:name}.rendered = function(){\n\t${2}\n}'
+    'body': 'Template.${1:name}.onRendered = function(){\n\t${2}\n}'
   'Template Events':
       'prefix': 'events'
       'body': '
@@ -451,7 +451,7 @@
   'Template Created':
     'prefix': 'created'
     'body': '
-      Template.${1:name}.created = function(){
+      Template.${1:name}.onCreated = function(){
       \n\t${2:}
       \n};
     '
@@ -459,7 +459,7 @@
   'Template Destroyed':
     'prefix': 'destroyed'
     'body': '
-      Template.${1:name}.destroyed = function(){
+      Template.${1:name}.onDestroyed = function(){
       \n\t${2:}
       \n};
     '
