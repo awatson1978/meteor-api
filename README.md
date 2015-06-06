@@ -44,9 +44,6 @@ Atom Beautify
 Atom Handlebars
 Atom Jshint
 Atom Prettify
-Angularjs
-Atom Angular
-Atom Bootstrap
 Autocomplete
 Autocomplete +
 Bracket Matcher
