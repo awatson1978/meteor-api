@@ -152,29 +152,29 @@
       }
     ]
   }
-  # {
-  #   'begin': '\\b(function\\*?)\\s*((\\*)|(\\*?[a-zA-Z_$]\\w*))?\\s*(\\()'
-  #   'beginCaptures':
-  #     '1':
-  #       'name': 'storage.type.function.js'
-  #     '3':
-  #       'name': 'storage.type.function.js'
-  #     '4':
-  #       'name': 'entity.name.function.js'
-  #     '5':
-  #       'name': 'punctuation.definition.parameters.begin.js'
-  #   'comment': 'match regular function like: function myFunc(arg) { … }'
-  #   'end': '(\\))'
-  #   'endCaptures':
-  #     '1':
-  #       'name': 'punctuation.definition.parameters.end.js'
-  #   'name': 'meta.function.js'
-  #   'patterns': [
-  #     {
-  #       'include': '#function-params'
-  #     }
-  #   ]
-  # }
+  {
+    'begin': '\\b(function\\*?)\\s*((\\*)|(\\*?[a-zA-Z_$]\\w*))?\\s*(\\()'
+    'beginCaptures':
+      '1':
+        'name': 'storage.type.function.js'
+      '3':
+        'name': 'storage.type.function.js'
+      '4':
+        'name': 'entity.name.function.js'
+      '5':
+        'name': 'punctuation.definition.parameters.begin.js'
+    'comment': 'match regular function like: function myFunc(arg) { … }'
+    'end': '(\\))'
+    'endCaptures':
+      '1':
+        'name': 'punctuation.definition.parameters.end.js'
+    'name': 'meta.function.js'
+    'patterns': [
+      {
+        'include': '#function-params'
+      }
+    ]
+  }
   {
     'begin': '\\b([a-zA-Z_?.$][\\w?.$]*)\\s*:\\s*\\b(function\\*?)?\\s*(\\*?)(\\()'
     'beginCaptures':
@@ -424,14 +424,14 @@
   #   'match': '(?<!\\.)\\b(module|exports|__filename|__dirname|global|process)(?!\\s*:)\\b'
   #   'name': 'support.variable.js'
   # }
-  # {
-  #   'match': '!|%|&|\\*|\\-\\-|\\-|\\+\\+|\\+|~|===|==|=|!=|!==|<=|>=|<<=|>>=|>>>=|<>|<|>|!|&&|\\|\\||\\?|\\:|\\*=|(?<!\\()/=|%=|\\+=|\\-=|&=|\\^='
-  #   'name': 'keyword.operator.js'
-  # }
-  # {
-  #   'match': '\\b(Infinity|NaN|undefined)\\b'
-  #   'name': 'constant.language.js'
-  # }
+  {
+    'match': '!|%|&|\\*|\\-\\-|\\-|\\+\\+|\\+|~|===|==|=|!=|!==|<=|>=|<<=|>>=|>>>=|<>|<|>|!|&&|\\|\\||\\?|\\:|\\*=|(?<!\\()/=|%=|\\+=|\\-=|&=|\\^='
+    'name': 'keyword.operator.js'
+  }
+  {
+    'match': '\\b(Infinity|NaN|undefined)\\b'
+    'name': 'constant.language.js'
+  }
   # {
   #   'begin': '(?<=[\\[=(:+]|^|return|&&|\\|\\||!)\\s*(/)(?![/*+{}?])(?=.*/)'
   #   'beginCaptures':
