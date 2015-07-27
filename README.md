@@ -84,8 +84,31 @@ meteor create helloworld
 cd helloworld
 atom helloworld.js
 ````
+---------------------------------------
+#### Linting Tools  
+
+1. Install the ``eslint`` node package:
+````sh
+npm install -g eslint
+````
+
+2. Install the ``linter``, and ``linter-eslint`` atom packages from 
+
+````sh
+apm install jsformat
+apm install linter
+apm install linter-eslint
+````
+
+3. Check that the packages are configured correctly.  You might need to add ``/usr/local`` as your NPM prefix for ``linter-eslint``.  
+
+4.  Copy over ``.eslintrc``to get started.  
+
+[.eslintrc](https://github.com/yauh/meteor-with-style/blob/master/.eslintrc)   
 
 
+  
+  
 ---------------------------------------
 #### Acknowledgements / Contributors
 
