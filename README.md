@@ -36,37 +36,31 @@ If you'd like to permanently make all javascript default to the ``Javascript (Me
 ---------------------------------------
 #### Setting Up Atom As an Integrated Development Environment
 
-If you want even more Meteor integration, try installing the following packages for an integrated, isomorphic, pure-javascript development environment.  (This list will be updated as new packages are added to the Atom ecosystem).  
+If you want even more Meteor integration, try installing the following packages for an integrated, isomorphic, pure-javascript development environment.  
 
 ````sh
-Atom Lint
-Atom Beautify
-Atom Handlebars
-Atom Jshint
-Atom Prettify
-Autocomplete
-Autocomplete +
-Bracket Matcher
-File Types
-Filetype Color
-Grammar Selector
-Language Spacebars
-Meteor Api
-Meteor Helper
-Wrap Guide
+atom-bootstrap3
+atom-handlebars
+color-picker
+copy-filename
+jsformat
+language-html
+language-spacebars
+less-autocompile
+line-count
+linter
+linter-eslint
+linter-handlebars
+merge-conflicts
+meteor-api
+meteor-helper
+minimap
 ````
 
-Then open your `config.cson` file with **Atom > Edit > Open Your Config** and add the following under `global`:
-
-````cson
-  'file-types':
-    'html': 'text.html.spacebars'
-    'js': 'source.js'
-````
 
 ##### Enabling Handlebars Linting (a bit more hacky)
 
-1. go to **Atom > Preferences > Packages**, search for ``Linter Handlebars`` and install the package
+1. go to **Atom > Preferences > Packages**, search for ``linter-handlebars`` and install the package
 2. click on `Settings` to open its settings page and click on ``Open in Atom``
 3. edit the file `linter-handlebars/lib/linter-handlebars.cofee` and add `text.html.spacebars` to the list of supported syntaxes. At the time of writing this list appears on [line 7](https://github.com/AtomLinter/linter-handlebars/blob/master/lib/linter-handlebars.coffee#L7): make sure it eventually looks like:
 
@@ -74,7 +68,7 @@ Then open your `config.cson` file with **Atom > Edit > Open Your Config** and ad
   @syntax: ['text.html.handlebars', 'source.hbs', 'source.handlebars', 'text.html.spacebars']
 ````
 
-Please be aware that you might need to repeat this editing operation everytime the package  ``Linter Handlebars`` gets updated.
+Please be aware that you might need to repeat this editing operation everytime the package  ``linter-handlebars`` gets updated.
 
 ---------------------------------------
 #### Open Files From the Command Line
@@ -129,8 +123,6 @@ The hotkey command to reload the packages into Atom is ``Control+Option+Command+
 - [x] [Handelbars/Spacebars Syntax](https://atom.io/packages/atom-handlebars)  
 - [ ] [Meteor Version of Autocomplete](https://atom.io/packages/autocomplete-plus)  
 - [ ] [Meteor Version of Extract Method](https://atom.io/packages/extract-method)  
-- [ ] [Meteor Symbols](https://github.com/atom/symbols-view)  
-- [ ] [Meteor Symbols: Goto Declaration](https://github.com/atom/symbols-view/issues/9)  
 
 
 ``ctags -R .`` for extracting method definitions; add ctags file to meteor projects
