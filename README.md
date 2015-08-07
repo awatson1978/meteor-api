@@ -61,11 +61,11 @@ minimap
 ##### Enabling Handlebars Linting (a bit more hacky)
 
 1. go to **Atom > Preferences > Packages**, search for ``linter-handlebars`` and install the package
-2. click on `Settings` to open its settings page and click on ``Open in Atom``
-3. edit the file `linter-handlebars/lib/linter-handlebars.cofee` and add `text.html.spacebars` to the list of supported syntaxes. At the time of writing this list appears on [line 7](https://github.com/AtomLinter/linter-handlebars/blob/master/lib/linter-handlebars.coffee#L7): make sure it eventually looks like:
+2. after the instllation finished, click on the package ``linter-handlebars`` to open its settings page and click on ``View Code``
+3. edit the file `linter-handlebars/lib/linter-handlebars-provider.coffee` and add `text.html.spacebars` to the list of supported grammars. At the time of writing this list appears on [line 7](https://github.com/AtomLinter/linter-handlebars/blob/v2.0.0/lib/linter-handlebars-provider.coffee#L7): make sure it eventually looks like:
 
 ````coffeescript
-  @syntax: ['text.html.handlebars', 'source.hbs', 'source.handlebars', 'text.html.spacebars']
+  grammarScopes: ['text.html.handlebars', 'source.hbs', 'source.handlebars', 'text.html.spacebars']
 ````
 
 Please be aware that you might need to repeat this editing operation everytime the package  ``linter-handlebars`` gets updated.
