@@ -676,7 +676,7 @@
       \n\tloadingTemplate:"${3:loadingTemplate}",
       \n\tyieldRegions:{
       \n\t\t"${4:myAside}": {to: "aside"},
-      \n\t\t"${5:myHeader}": {to: "header"}
+      \n\t\t"${5:myHeader}": {to: "header"},
       \n\t\t"${6:myFooter}": {to: "footer"}
       \n\t}
       \n});
