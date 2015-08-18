@@ -670,7 +670,7 @@
   'Router.configure':
     'prefix': 'configure'
     'body': '
-      Router.route({
+      Router.configure({
       \n\tlayoutTemplate:"${1:layoutTemplate}",
       \n\tnotFoundTemplate:"${2:notFoundTemplate}",
       \n\tloadingTemplate:"${3:loadingTemplate}",
