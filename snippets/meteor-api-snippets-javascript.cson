@@ -374,13 +374,13 @@
 
   'Meteor.setTimeout':
     'prefix': 'setTimeout'
-    'body': 'Match.setTimeout(function(){
+    'body': 'Meteor.setTimeout(function(){
     \n\t${2:}
     \n}, ${1:milliseconds});'
 
   'Meteor.setInterval':
     'prefix': 'setInterval'
-    'body': 'Match.setTimeout(function(){
+    'body': 'Meteor.setInterval(function(){
     \n\t${2:}
     \n}, ${1:milliseconds});'
 
@@ -438,7 +438,8 @@
 
   'Template Rendered':
     'prefix': 'rendered'
-    'body': 'Template.${1:name}.onRendered = function(){\n\t${2}\n}'
+    'body': 'Template.${1:name}.onRendered(function(){\n\t${2}\n});'
+
   'Template Events':
       'prefix': 'events'
       'body': '
@@ -451,17 +452,17 @@
   'Template Created':
     'prefix': 'created'
     'body': '
-      Template.${1:name}.onCreated = function(){
+      Template.${1:name}.onCreated(function(){
       \n\t${2:}
-      \n};
+      \n});
     '
 
   'Template Destroyed':
     'prefix': 'destroyed'
     'body': '
-      Template.${1:name}.onDestroyed = function(){
+      Template.${1:name}.onDestroyed(function(){
       \n\t${2:}
-      \n};
+      \n});
     '
 
   'Template':
