@@ -374,13 +374,13 @@
 
   'Meteor.setTimeout':
     'prefix': 'setTimeout'
-    'body': 'Match.setTimeout(function(){
+    'body': 'Meteor.setTimeout(function(){
     \n\t${2:}
     \n}, ${1:milliseconds});'
 
   'Meteor.setInterval':
     'prefix': 'setInterval'
-    'body': 'Match.setTimeout(function(){
+    'body': 'Meteor.setInterval(function(){
     \n\t${2:}
     \n}, ${1:milliseconds});'
 
