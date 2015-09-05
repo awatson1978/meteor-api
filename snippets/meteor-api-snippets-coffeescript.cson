@@ -320,7 +320,7 @@
 
   'Meteor.setInterval':
     'prefix': 'setInterval'
-    'body': 'Meteor.setTimeout (->
+    'body': 'Meteor.setInterval (->
     \n\t$2
     \n${1:milliseconds})'
 
