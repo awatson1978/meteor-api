@@ -55,6 +55,7 @@ merge-conflicts
 meteor-api
 meteor-helper
 minimap
+starrynight-helper
 ````
 
 
