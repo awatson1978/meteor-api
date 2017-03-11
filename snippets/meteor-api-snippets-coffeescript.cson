@@ -314,13 +314,13 @@
 
   'Meteor.setTimeout':
     'prefix': 'setTimeout'
-    'body': 'Match.setTimeout (->
+    'body': 'Meteor.setTimeout (->
     \n\t$2
     \n${1:milliseconds})'
 
   'Meteor.setInterval':
     'prefix': 'setInterval'
-    'body': 'Match.setTimeout (->
+    'body': 'Meteor.setInterval (->
     \n\t$2
     \n${1:milliseconds})'
 
